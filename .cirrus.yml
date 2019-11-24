@@ -5,6 +5,8 @@ env:
   ERLC_OPTS: "+warning_as_errors"
   LANG: C.UTF-8
 
+auto_cancellation: $CIRRUS_BRANCH != 'master' && $CIRRUS_BRANCH !=~ 'v\d+\.\d+\.d+.*'
+
 test_linux_task:
   name: Linux, ${OTP_RELEASE}, Ubuntu 14.04
 
